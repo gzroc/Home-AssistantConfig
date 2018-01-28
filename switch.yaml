@@ -1,0 +1,191 @@
+############厨房灯#########
+  - platform: mqtt
+    name: kitchen 3 key 1
+    state_topic: "home/hassmart_kitchen/0087C1C0/key1/stat"
+    command_topic: "home/hassmart_kitchen/0087C1C0/key1"
+    qos: 1
+    payload_on: "on"
+    payload_off: "off"
+    retain: false
+
+  - platform: mqtt
+    name: kitchen 3 key 2
+    state_topic: "home/hassmart_kitchen/0087C1C0/key2/stat"
+    command_topic: "home/hassmart_kitchen/0087C1C0/key2"
+    qos: 1
+    payload_on: "on"
+    payload_off: "off"
+    retain: false
+
+  - platform: mqtt
+    name: kitchen 3 key 3
+    state_topic: "home/hassmart_kitchen/0087C1C0/key3/stat"
+    command_topic: "home/hassmart_kitchen/0087C1C0/key3"
+    qos: 1
+    payload_on: "on"
+    payload_off: "off"
+    retain: false
+############入门灯#########
+  - platform: mqtt
+    name: door 3 key 1
+    state_topic: "home/hassmart_door/0087C54F/key1/stat"
+    command_topic: "home/hassmart_door/0087C54F/key1"
+    qos: 1
+    payload_on: "on"
+    payload_off: "off"
+    retain: false
+
+  - platform: mqtt
+    name: door 3 key 2
+    state_topic: "home/hassmart_door/0087C54F/key2/stat"
+    command_topic: "home/hassmart_door/0087C54F/key2"
+    qos: 1
+    payload_on: "on"
+    payload_off: "off"
+    retain: false
+
+  - platform: mqtt
+    name: door 3 key 3
+    state_topic: "home/hassmart_door/0087C54F/key3/stat"
+    command_topic: "home/hassmart_door/0087C54F/key3"
+    qos: 1
+    payload_on: "on"
+    payload_off: "off"
+    retain: false
+
+############HASS开关#########
+  - platform: mqtt
+    name: test 3 key 1
+    state_topic: "home/hassmart_3keybedroom/008C1F56/key1/stat"
+    command_topic: "home/hassmart_3keybedroom/008C1F56/key1"
+    qos: 1
+    payload_on: "on"
+    payload_off: "off"
+    retain: false
+
+  - platform: mqtt
+    name: test 3 key 2
+    state_topic: "home/hassmart_3keybedroom/008C1F56/key2/stat"
+    command_topic: "home/hassmart_3keybedroom/008C1F56/key2"
+    qos: 1
+    payload_on: "on"
+    payload_off: "off"
+    retain: false
+
+  - platform: mqtt
+    name: test 3 key 3
+    state_topic: "home/hassmart_3keybedroom/008C1F56/key3/stat"
+    command_topic: "home/hassmart_3keybedroom/008C1F56/key3"
+    qos: 1
+    payload_on: "on"
+    payload_off: "off"
+    retain: false
+
+############悟空遥控#########
+  - platform: WuKong
+    host: 192.168.0.12
+    mode: "UDP"
+    PrefixName: "Himedia HD600a"
+############sonoff开关#########
+  - platform: mqtt
+    name: "SONOFF_PIR"
+    state_topic: "home/bedroom/sonoff"
+    command_topic: "home/bedroom/sonoff"
+    qos: 1
+    payload_on: "on"
+    payload_off: "off"
+    retain: true
+##########sonoff_balcony#########
+  - platform: mqtt
+    name: "sonoff_LuoDiDeng"
+    state_topic: "stat/sonoff/POWER"
+    command_topic: "cmnd/sonoff/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+##########sonoff2_天逸前级#########
+  - platform: mqtt
+    name: "sonoff_tianyi"
+    state_topic: "stat/sonoff_2/POWER"
+    command_topic: "cmnd/sonoff_2/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+##########sonoff3_电视#########
+  - platform: mqtt
+    name: "sonoff_TV"
+    state_topic: "stat/sonoff3/POWER"
+    command_topic: "cmnd/sonoff3/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+##########sonoff4_索尼功放#########
+  - platform: mqtt
+    name: "sonoff_SONY"
+    state_topic: "stat/sonoff4/POWER"
+    command_topic: "cmnd/sonoff4/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+##########sonoff_bedroom#######
+  - platform: mqtt
+    name: "bedroom"
+    state_topic: "stat/sonoff1/POWER"
+    command_topic: "cmnd/sonoff1/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+###########sonoff pow#################
+  - platform: mqtt
+    name: "sonoff_sw"
+    state_topic: "stat/sw/POWER"
+    command_topic: "cmnd/sw/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+###########博联智能插座##########
+  - platform: broadlink
+    host: 192.168.0.62
+    mac: '34:EA:34:CF:1D:6C'
+    type: sp3
+    friendly_name: 'broadlink_sp3'
+###########鸿雁智能插排##########
+  - platform: broadlink_mp1
+    host: 192.168.0.61
+    mac: '34:EA:34:F3:7E:DC'
+    friendly_name: "Broadlink MP1"
+    alias:
+      s1: device1
+      s2: device2
+      s3: device3
+      s4: device4
+#博联遥控器学习
+  - platform: broadlink
+    host: 192.168.0.60
+    mac: '34:EA:34:C7:C5:2A'
+    friendly_name: "Broadlink RM2"
+    timeout: 15
+    switches:
+      # Will work on most Phillips TVs:
+      tv_samsung:
+        friendly_name: "samsung Tv Power"
+        command_on: 'JgBQAAABKpEVEBYPFg8WEBUQFRAVEBYPFTQUNBUzFTQUNBUzFhAUNBUQFg8WEBUQFRAVEBYPFg8VNBQ0FTMVNBUzFTMVNBUzFQAFNgABKkcVAA0FAAAAAAAAAAA='
+        command_off: 'JgBQAAABKpEVEBYPFg8WEBUQFRAVEBYPFTQUNBUzFTQUNBUzFhAUNBUQFg8WEBUQFRAVEBYPFg8VNBQ0FTMVNBUzFTMVNBUzFQAFNgABKkcVAA0FAAAAAAAAAAA='
+      tv_iptv:
+        friendly_name: "IPTV Power"
+        command_on: 'JgBQAAABKJAWDxY0Fg8VDxYPFTUVDxYPFTUVDxY0FjUVNRUPGTEWNBYPFQ8WNRU1FTUVDxY0FjQWNBY1FQ8WDxUPFjQWDxUPFgAFCgABKEcVAA0FAAAAAAAAAAA='
+        command_off: 'JgBYAAABJ5EWDxU1FQ8WDxUPFTUWDxUPFjUYDBY0FTUWNBYPFTUVNRUQFQ8WNBY0FjQWDxU1FTUVNRY0Fg8VDxYPFTUZCxYPFQAFCgABKUYWAAw9AAEoRxUADQU='
+      tv_himedia:
+        friendly_name: "Himedia Power"
+        command_on: 'JgBQAAABKZEVERQRFBEUERQRExIUNhQRFBETEhQRFBEUERQRFDUVERQ1FREUNRU1FREUERQ1FREUERQ1FREUEhQ0FTYUERQ1FQAGAgABKUgVAA0FAAAAAAAAAAA='
+        command_off: 'JgBQAAABKZEVERQRFBEUERQRExIUNhQRFBETEhQRFBEUERQRFDUVERQ1FREUNRU1FREUERQ1FREUERQ1FREUEhQ0FTYUERQ1FQAGAgABKUgVAA0FAAAAAAAAAAA='
+      air1:
+        friendly_name: "air1 Power"
+        command_on: 'JgDKAJWPFTMVDxkvGC8WDxQQFDMVEBgLFTIWDxUPFTIVNBgMFDIWMhYPFBAUNBguFjIWMhYyFRAUMxUyFg8VDxUPFQ8UEBQzFRAUMhYPFQ8VDxUPFBAUEBQzFQ8VMhYyFTMVMxUyFqqWjxUyFRAUMxUyFg8VDxUyFRAUEBQzFQ8VDxUyFjIVEBQzFTMVDxkLFTIWMhUzFTMZLhYPFTIVMxUQFA8VDxUPFQ8VMxQQFDMVEBQPFQ8VDxUPFQ8VMhUQFDMaLRYyFjIVMxUADQUAAAAAAAAAAAAAAAAAAA=='
+        command_off: 'JgDKAJWPFTMVEBQyFjIWDxUPFTIVEBQQFDIWDxUPFTIVMxUQFDMVDxUyFjIVMxUzFQ8VMhYyFjIVEBQQFBAUDxUyFg8VDxUzFDQUMxUPFQ8VDxUPFQ8UEBQQFBAUMhYyFjIWMhUzFaqWjhYzFQ8VMhUzFRAUDxUyFg8VDxUyFRAUEBQyFjIWDxUyFRAUMxUzFTIWMhYPFDMVMxUyFg8VDxUPFQ8UNBQQFBAUMhYzFTMUEBQQFBAUDxUPFQ8VDxUPFTMUMxUzFTIWMhYADQUAAAAAAAAAAAAAAAAAAA=='

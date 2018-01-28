@@ -1,0 +1,103 @@
+homeassistant:
+  packages: !include_dir_named packages
+  # Name of the location where Home Assistant is running
+  name: MonkeyHouse智能家居管理平台
+  # Location required to calculate the time the sun rises and sets
+  latitude: 23.1685839668
+  longitude: 112.9157112703
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 2
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Asia/Shanghai
+  # Customization file
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+http:
+  # Secrets are defined in the file secrets.yaml
+  api_password: "200"
+  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+  # base_url: example.duckdns.org:8123
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+panel_iframe:
+  plex:
+    title: 家庭影院
+    icon: mdi:movie-roll
+    url: http://192.168.0.234:32400/web/index.html  
+ios:
+#dlna:
+# Weather prediction
+#sensor:
+#  - platform: yr
+
+# Text to speech
+tts: !include tts.yaml
+
+# Cloud
+cloud:
+switch: !include switch.yaml
+group: !include groups.yaml
+sensor: !include sensor.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+media_player: !include media_player.yaml
+light: !include light.yaml
+mqtt:
+  broker: 192.168.0.200
+  port: 1883
+  client_id: hassio
+  keepalive: 60
+  username: root
+  password: 200888
+  protocol: 3.1.1
+  discovery: false
+xiaomi_aqara:
+  discovery_retry: 5
+  gateways:
+    - key: B99A484FEB4849BD
+camera:
+  - platform: synology
+    url: https://192.168.0.234:5001
+    username: admin
+    password: 200888
+    timeout: 15
+    verify_ssl: False
+transmissionctl:
+  host: 192.168.0.234
+  port: 9091

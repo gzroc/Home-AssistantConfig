@@ -1,0 +1,187 @@
+################综合信息#####################
+#entity_picture: //api.met.no/weatherapi/weathericon/1.1/?symbol=1;content_type=image/png
+sun.sun:
+  friendly_name: '日出日落时间'
+  homebridge_hidden: false
+  homebridge_name: '日出日落时间'
+sensor.date__time:
+  friendly_name: '当前时间'
+  homebridge_hidden: false
+  homebridge_name: '当前时间'
+################客厅#####################
+switch.broadlink_sp3:
+  friendly_name: '电热毯'
+  homebridge_hidden: false
+  homebridge_name: '电热毯'
+switch.sonoff_tv:
+  friendly_name: '电视开关'
+  homebridge_hidden: false
+  homebridge_name: '电视开关'
+switch.sonoff_sony:
+  friendly_name: '索尼功放'
+  homebridge_hidden: false
+  homebridge_name: '索尼功放'
+switch.sonoff_sw:
+  friendly_name: '大功率'
+  homebridge_hidden: false
+  homebridge_name: '大功率'
+switch.sonoff_tianyi:
+  friendly_name: '天逸前级'
+  homebridge_hidden: false
+  homebridge_name: '天逸前级'
+sensor.broadlink_sensor_temperature:
+  friendly_name: '客厅温度'
+  homebridge_hidden: false
+  homebridge_name: '客厅温度'
+switch.samsung_tv_power:
+  friendly_name: '电视机'
+  homebridge_hidden: false
+  homebridge_name: '电视机'
+switch.iptv_power:
+  friendly_name: '电信盒子'
+  homebridge_hidden: false
+  homebridge_name: '电信盒子'
+switch.himedia_power:
+  friendly_name: '海美迪盒子'
+  homebridge_hidden: false
+  homebridge_name: '海美迪盒子'
+switch.air1_power:
+  friendly_name: '客厅空调'
+  homebridge_hidden: false
+  homebridge_name: '客厅空调'
+switch.device1:
+  friendly_name: '插座1'
+  homebridge_hidden: false
+  homebridge_name: '插座1'
+switch.device2:
+  friendly_name: '插座2'
+  homebridge_hidden: false
+  homebridge_name: '插座2'
+switch.device3:
+  friendly_name: '插座3'
+  homebridge_hidden: false
+  homebridge_name: '插座3'
+switch.device4:
+  friendly_name: '客厅监控'
+  homebridge_hidden: false
+  homebridge_name: '客厅监控'
+################主阳台#####################
+switch.sonoff_balcony:
+  friendly_name: '阳台灯'
+  homebridge_hidden: false
+  homebridge_name: '阳台灯'
+################厨房#####################
+switch.kitchen_3_key_1:
+  friendly_name: '厨房灯'
+  homebridge_hidden: false
+  homebridge_name: '厨房灯'
+switch.kitchen_3_key_2:
+  friendly_name: '小阳台灯'
+  homebridge_hidden: false
+  homebridge_name: '小阳台灯'
+switch.kitchen_3_key_3:
+  friendly_name: '排气扇'
+  homebridge_hidden: false
+  homebridge_name: '排气扇'
+################入户花园#####################
+switch.door_3_key_1:
+  friendly_name: '入户灯'
+  homebridge_hidden: false
+  homebridge_name: '入户灯'
+switch.door_3_key_2:
+  friendly_name: '入户副灯'
+  homebridge_hidden: false
+  homebridge_name: '入户副灯'
+switch.door_3_key_3:
+  friendly_name: '迎宾灯'
+  homebridge_hidden: false
+  homebridge_name: '迎宾灯'
+################卧室#####################
+switch.sonoff_LuoDiDeng:
+  friendly_name: '落地灯开关'
+  homebridge_hidden: false
+  homebridge_name: '落地灯开关'
+light.yeelight_rgb_7811dca1e5ab:
+  friendly_name: '落地灯'
+  homebridge_hidden: false
+  homebridge_name: '落地灯'
+light.bed_room_light:
+  friendly_name: '吸顶灯'
+  homebridge_hidden: false
+  homebridge_name: '吸顶灯'
+light.gateway_light_34ce0088aa60:
+  friendly_name: '壁灯'
+  homebridge_hidden: false
+  homebridge_name: '壁灯'
+switch.test_3_key_1:
+  friendly_name: '门灯'
+  homebridge_hidden: false
+  homebridge_name: '门灯'
+switch.test_3_key_2:
+  friendly_name: '射灯'
+  homebridge_hidden: false
+  homebridge_name: '射灯'
+switch.test_3_key_3:
+  friendly_name: '主灯'
+  homebridge_hidden: false
+  homebridge_name: '主灯'
+sensor.illumination_34ce0088aa60:
+  friendly_name: '光感'
+  homebridge_hidden: false
+  homebridge_name: '光感'
+binary_sensor.switch_158d0001243498 :
+  friendly_name: '开关1'
+  homebridge_hidden: false
+  homebridge_name: '开关1'
+binary_sensor.switch_158d0001243409:
+  friendly_name: '开关2'
+  homebridge_hidden: false
+  homebridge_name: '开关2'
+
+################室外#####################
+sensor.temperature_158d00019dbde4:
+  friendly_name: '室外温度'
+  homebridge_hidden: false
+  homebridge_name: '室外温度'
+sensor.humidity_158d00019dbde4:
+  friendly_name: '室外湿度'
+  homebridge_hidden: false
+  homebridge_name: '室外湿度'
+################多媒体#####################
+configurator.plex_media_server:
+  friendly_name: 'PLEX多媒体服务器'
+  homebridge_hidden: false
+  homebridge_name: 'PLEX多媒体服务器'
+media_player.192_168_0_13:
+  friendly_name: 'IPTV播放器'
+  homebridge_hidden: false
+  homebridge_name: 'IPTV播放器'
+media_player.mpd:
+  friendly_name: 'MPD播放器'
+  homebridge_hidden: false
+  homebridge_name: 'MPD播放器'
+media_player.kodi:
+  friendly_name: 'KODI播放器'
+  homebridge_hidden: false
+  homebridge_name: 'KODI播放器'
+media_player.plex_web_chrome:
+  friendly_name: 'Chrome播放器'
+  homebridge_hidden: false
+  homebridge_name: 'Chrome播放器'
+#########TRANSMISSION###########
+sensor.transmission_up_speed:
+  friendly_name: 上行速度
+  homebridge_hidden: true
+sensor.transmission_status:
+  friendly_name: 状态
+  homebridge_hidden: true
+sensor.transmission_down_speed:
+  friendly_name: 下行速度
+  homebridge_hidden: true
+#########mobile###########
+sensor.ken_battery_level:
+  friendly_name: KEN手机电量
+  homebridge_hidden: false
+sensor.ken_battery_state:
+  friendly_name: KEN手机状态
+  homebridge_hidden: false

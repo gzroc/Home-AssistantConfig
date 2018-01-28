@@ -1,0 +1,9 @@
+  - platform: baidu
+    language: zh
+    app_id: 6245183
+    api_key: 3s9Dot2BAbNvoNMPufgGw0Ib
+    secret_key: 2MEXhwAzdscDCDzYV6HNjfPGX1nAXZxy
+    speed: 5
+    pitch: 5
+    volume: 9
+    person: 0

@@ -1,0 +1,92 @@
+  - platform: moviehd
+    name: movie_gaoqing
+  - platform: plex
+    host: 192.168.0.234
+  - platform: yr
+#博联RM2温度  
+  - platform: broadlink
+    update_interval: 60
+    host: 192.168.0.60
+    mac: '34:EA:34:C7:C5:2A'
+    monitored_conditions:
+      - temperature
+#######sonoff_t_balcony_tem温湿度传感器#########
+#  - platform: mqtt
+#    name: "woshi_balcony_tem"
+#    state_topic: "tele/S1/SENSOR"
+#    value_template: "{{ value_json['DHT22'].Temperature }}"
+#    unit_of_measurement: "°C"
+# 
+#  - platform: mqtt
+#    name: "woshi_balcony_hum"
+#    state_topic: "tele/S1/SENSOR"
+#    value_template: "{{ value_json['DHT22'].Humidity }}"
+#    unit_of_measurement: "%"
+####transmission
+  - platform: transmission
+    host: 192.168.0.234
+    username: admin
+    password: admin
+    monitored_variables:
+      - 'current_status'
+      - 'download_speed'
+      - 'upload_speed'
+
+#群晖
+  - platform: synologydsm
+    host: 192.168.0.234
+    port: 5000
+    username: ken
+    password: 200
+    monitored_conditions:
+      - cpu_other_load
+      - cpu_user_load
+      - cpu_system_load
+      - cpu_total_load
+      - cpu_1min_load
+      - cpu_5min_load
+      - cpu_15min_load
+      - memory_real_usage
+      - memory_size
+      - memory_cached
+      - memory_available_swap
+      - memory_available_real
+      - memory_total_swap
+      - memory_total_real
+      - network_up
+      - network_down
+      - disk_name
+      - disk_device
+      - disk_smart_status
+      - disk_status
+      - disk_exceed_bad_sector_thr
+      - disk_below_remain_life_thr
+      - disk_temp
+      - volume_status
+      - volume_device_type
+      - volume_size_total
+      - volume_size_used
+      - volume_percentage_used
+      - volume_disk_temp_avg
+      - volume_disk_temp_max
+#  - platform: yr
+#中国天气
+#  - platform: WeatherChina
+#    CityCode:
+#      - 101280802
+#      - 101280501
+
+########时间日期########
+  - platform: time_date
+    display_options:
+      - 'time'
+      - 'date'
+      - 'date_time'
+      - 'time_date'
+      - 'time_utc'
+      - 'beat'
+  - platform: template
+    sensors:
+      alarm_time:
+        friendly_name: '闹铃时间'
+        value_template: '{{ "%0.02d:%0.02d" | format(states("input_slider.alarmhour") | int, states("input_slider.alarmminutes") | int) }}'

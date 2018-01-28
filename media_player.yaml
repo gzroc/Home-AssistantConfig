@@ -1,0 +1,11 @@
+#MPD播放器
+  - platform: mpd
+    host: 127.0.0.1
+#plex播放器
+  - platform: plex
+#####kodi######
+  - platform: kodi
+    host: 192.168.0.12
+    name: KODI播放器
+    username: kodi
+    password: 1234

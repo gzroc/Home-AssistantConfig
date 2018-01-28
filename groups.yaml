@@ -1,0 +1,165 @@
+default_view:
+  view: yes
+  name: '控制面板'
+#  icon: mdi:home-variant
+  entities:
+    - group.home
+    - group.door
+    - group.living_room
+    - group.bed_room
+    - group.kitchen
+    - group.study_room
+    - group.guest_room
+    - group.balcony
+    - group.out_side
+    - group.multimedia
+    - group.transmission
+    - group.mobile
+    - group.synology
+    - group.camera
+###########综合#############
+home:
+  name: 综合状态
+  view: no
+  icon: mdi:clock
+  entities:
+    - updater.updater
+    - sensor.date
+    - sensor.time
+    - sun.sun
+    - sensor.yr_symbol
+    - persistent_notification.homeassistantcheck_config
+###########客厅###########
+living_room:
+  view: no
+  name: 客厅 
+  entities:
+    - sensor.broadlink_sensor_temperature
+    - switch.air1_power
+    - switch.iptv_power
+    - switch.samsung_tv_power
+    - switch.himedia_power
+    - switch.sonoff_tv
+    - switch.sonoff_tianyi
+    - switch.sonoff_sw
+    - switch.sonoff_sony
+    - switch.broadlink_sp3
+    - switch.device1
+    - switch.device2
+    - switch.device3
+    - switch.device4
+
+###########书房###########
+study_room:
+  view: no
+  name: 书房 
+  entities:
+###########卧室#############
+bed_room:
+  name: 卧室
+  view: no
+  icon: mdi:clock
+  entities:
+    - switch.sonoff_LuoDiDeng
+    - light.yeelight_rgb_7811dca1e5ab
+    - light.bed_room_light
+    - light.gateway_light_34ce0088aa60
+    - switch.test_3_key_1
+    - switch.test_3_key_2 
+    - switch.test_3_key_3
+    - sensor.illumination_34ce0088aa60
+    - binary_sensor.switch_158d0001243498 
+    - binary_sensor.switch_158d0001243409
+###########厨房###########
+kitchen:
+  view: no
+  name: 厨房 
+  entities:
+    - switch.kitchen_3_key_1
+    - switch.kitchen_3_key_2
+    - switch.kitchen_3_key_3
+
+
+###########入户花园###########
+door:
+  view: no
+  name: 入户花园 
+  entities:
+    - switch.door_3_key_1
+    - switch.door_3_key_2
+    - switch.door_3_key_3
+
+###########客房###########
+guest_room:
+  view: no
+  name: 客房 
+  entities:
+
+###########主阳台###########
+balcony:
+  view: no
+  name: 主阳台 
+  entities:
+    - switch.sonoff_balcony
+ 
+###########室外###########
+out_side:
+  view: no
+  name: 室外 
+  entities:
+    - sensor.temperature_158d00019dbde4
+    - sensor.humidity_158d00019dbde4
+###########多媒体###########
+multimedia:
+  view: no
+  name: 多媒体 
+  entities:
+    - configurator.plex_media_server
+    - media_player.kodi
+    - media_player.mpd
+    - media_player.plex_web_chrome
+    - media_player.192_168_0_13
+############transmission
+transmission:
+  view: no
+  name: Transmission下载机
+  entities:
+    - sensor.transmission_status
+    - sensor.transmission_up_speed
+    - sensor.transmission_down_speed
+#############移动设备###########
+mobile:
+  view: no
+  name: 移动设备
+  entities:
+    - device_tracker.ken
+    - sensor.ken_battery_level
+    - sensor.ken_battery_state
+    - device_tracker.ipad
+
+#############摄像头###########
+camera:
+  view: no
+  name: 监控设备
+  entities:
+    - camera.livingroom
+
+#############群晖###########
+synology:
+  view: no
+  name: 群晖NAS
+  entities:
+    #CPU使用率
+    - sensor.cpu_load_total
+    #内存利用率
+    - sensor.memory_usage_real
+    #实时上传
+    - sensor.network_up
+    #实时下载
+    - sensor.network_up
+    #硬盘SMART状态
+    - sensor.status_smart_sda
+    - sensor.status_smart_sdc
+    - sensor.status_smart_sdd
+    - sensor.status_smart_sdg
+    - sensor.status_smart_sdh

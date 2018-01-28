@@ -1,0 +1,88 @@
+############单击开关落地灯##############
+  - alias: open_light
+    trigger:
+      - platform: event
+        event_type: click
+        event_data:
+          entity_id: binary_sensor.switch_158d0001243409
+          click_type: single
+    condition:
+      - condition: state
+        entity_id: light.yeelight_rgb_7811dca1e5ab
+        state: 'off'
+    action:
+      - service: light.turn_on
+        entity_id: light.yeelight_rgb_7811dca1e5ab
+  - alias: close_light
+    trigger:
+      - platform: event
+        event_type: click
+        event_data:
+          entity_id: binary_sensor.switch_158d0001243409
+          click_type: single
+    condition:
+      - condition: state
+        entity_id: light.yeelight_rgb_7811dca1e5ab
+        state: 'on'
+    action:
+      - service: light.turn_off
+        entity_id: light.yeelight_rgb_7811dca1e5ab
+############长按开关吸顶灯##############
+  - alias: close_xidingdeng
+    trigger:
+      - platform: event
+        event_type: click
+        event_data:
+          entity_id: binary_sensor.switch_158d0001243409
+          click_type: long_click_press  
+    condition:
+      - condition: state
+        entity_id: light.bed_room_light
+        state: 'on'
+    action:
+      - service: light.turn_off
+        entity_id: light.bed_room_light
+  - alias: open_xidingdeng
+    trigger:
+      - platform: event
+        event_type: click
+        event_data:
+          entity_id: binary_sensor.switch_158d0001243409
+          click_type: long_click_press  
+    condition:
+      - condition: state
+        entity_id: light.bed_room_light
+        state: 'off'
+    action:
+      - service: light.turn_on
+        entity_id: light.bed_room_light
+############双击开关带灯##############
+  - alias: close_daideng
+    trigger:
+      - platform: event
+        event_type: click
+        event_data:
+          entity_id: binary_sensor.switch_158d0001243409
+          click_type: double  
+    condition:
+      - condition: state
+        entity_id: switch.test_3_key_3
+        state: 'on'
+    action:
+      - service: switch.turn_off
+        entity_id: switch.test_3_key_3
+  - alias: open_daideng
+    trigger:
+      - platform: event
+        event_type: click
+        event_data:
+          entity_id: binary_sensor.switch_158d0001243409
+          click_type: double  
+    condition:
+      - condition: state
+        entity_id: switch.test_3_key_3
+        state: 'off'
+    action:
+      - service: switch.turn_on
+        data_template:
+          entity_id: switch.test_3_key_3
